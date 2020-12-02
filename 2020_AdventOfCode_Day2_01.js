@@ -1,7 +1,7 @@
 
 //File input
 fs = require('fs')
-let input = fs.readFileSync('/adventofcode/day2/input.txt', 'utf8');
+let input = fs.readFileSync('/adventofcode/2020/day2/input.txt', 'utf8');
 let inputArray = input.split("\r\n");  
 
 
