@@ -6,16 +6,16 @@ let inputArray = input.split("\r\n");
 
 
 let totalValid = 0;  // No reset
-
-let min;
-let max;
+	 
+let min; //min now equals first position to check
+let max; //max equals second position to check....
 let letterCheck;
 let testPWD;
 let testPWDArray;
 
 
 
-function inputbreakdown(str) {
+function inputBreakdown(str) {
 	//Split input[i] into a min/max, lettercheck and password
 	let evalArray = str.split(" ");
 	
@@ -24,12 +24,10 @@ function inputbreakdown(str) {
 	max = minMax[1];
 	
 	letterCheck = evalArray[1].split(":");
-
 	
 	testPWDArray = evalArray[2].split("\r\n");
+	testPWD = testPWDArray[0];
 
-	
-	
 }
 
 
@@ -37,15 +35,13 @@ function inputbreakdown(str) {
 
 for(i=0; i<inputArray.length; i++){
 	
-	inputbreakdown(inputArray[i]);
+	//Break down the input to get positions / letter to verify / pwd
+	inputBreakdown(inputArray[i]);
 
-	testPWD = testPWDArray[0];
-
+	
 	let checkOne;
 	let checkTwo;
 	
-	//min now equals first position  /  max equals second position to check....
-
 	
 	//Check 1 
 	if(testPWD[Number(min)-1] == letterCheck[0])
@@ -58,7 +54,6 @@ for(i=0; i<inputArray.length; i++){
 		checkTwo = true;
 	else
 		checkTwo = false;
-	
 	
 	
 	//Compare Check 1 and Check 2
