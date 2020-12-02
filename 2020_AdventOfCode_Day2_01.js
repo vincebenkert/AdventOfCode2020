@@ -6,16 +6,17 @@ let inputArray = input.split("\r\n");
 
 
 let totalValid = 0;  // No reset
+let occurrence = 0;  //Reset each time...
 
-let min;
-let max;
+let min;  // Minmium value of letterCheck
+let max;	// Max value of letterCheck
 let letterCheck;
 let testPWD;
 let testPWDArray;
-let occurrence = 0;  //Reset each time...
 
 
-function inputbreakdown(str) {
+
+function inputBreakdown(str) {
 	//Split input[i] into a min/max, lettercheck and password
 	let evalArray = str.split(" ");
 	
@@ -25,11 +26,9 @@ function inputbreakdown(str) {
 	
 	letterCheck = evalArray[1].split(":");
 
-	
 	testPWDArray = evalArray[2].split("\r\n");
+	testPWD = testPWDArray[0];
 
-	
-	
 }
 
 
@@ -37,12 +36,9 @@ function inputbreakdown(str) {
 
 for(i=0; i<inputArray.length; i++){
 	
-	inputbreakdown(inputArray[i]);
+	inputBreakdown(inputArray[i]);
 
-	testPWD = testPWDArray[0];
-
-
-
+	
 	//Evaluate by char[] in string, count occurrences where lettercheck equal char[i];
 	for(x=0; x<testPWD.length; x++){
 
